@@ -27,7 +27,7 @@ def create_points_plot(coords, photos, f_lst):
     x.append(coords[0][0])
     y.append(coords[0][1])
 
-    plt.rcParams["figure.figsize"] = (12, 10)
+    plt.rcParams["figure.figsize"] = (8, 6)
     ax = plt.axes()
     fig = pylab.gcf()
     fig.canvas.manager.set_window_title('Поле')
@@ -51,8 +51,11 @@ def make_calculations(f_lst, field_area):
 
 
 def get_coords(path):
-    coords = []
-    with open(path, 'r') as file:
-        for line in file.readlines():
-            coords.append(tuple([int(i) for i in line.rstrip().split()]))
-    return coords
+    try:
+        coords = []
+        with open(path, 'r') as file:
+            for line in file.readlines():
+                coords.append(tuple([int(i) for i in line.rstrip().split()]))
+        return coords
+    except:
+        raise

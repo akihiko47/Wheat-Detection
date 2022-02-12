@@ -1,0 +1,50 @@
+Wheat Detector - is a program for determining the amount of wheat in the field, the density of wheat and the area of ​​the field.
+
+For correct work you need:
+	Field contour coordinates. (1 unit = 1 meter)
+	Photos of wheat from a quadrocopter. (size 1024 by 1024 pixels)
+	Camera viewing angles should be 70 and 120 degrees
+	At the end of the photo name, you need to indicate the height from which the photo was taken. (specify through the sign '_' in CENTIMETERS)
+	Coordinates of photos on the field
+
+In order to make calculations, in the program interface you need to specify:
+	Folder from which photos of wheat will be taken. (photos have their own format, see above) (by default, 'images' folder)
+	A folder where the processed images with circled spikelets will be saved. (by default, folder 'detected_images')
+	Coordinates of photos and field contour
+	The format of the original images. (png or jpg)
+	Click 'START' button
+
+	After a while, all the calculated data will appear in the 'RESULTS' window
+	A window for visualizing the field and images will open. (the larger the point of the picture, the more spikelets in it)
+	For the spikelet detection test, you can view the processed images in the folder specified earlier
+
+Thank you for using this program!
+
+
+
+RUSSIAN INSTRUCTION:
+
+Wheat Detector - программа для определения количества пшеницы на поле, плотности пшеницы в шт/метр, площади поля.
+
+Для корректной работы необходимо:
+	Координаты контура поля. (1 ед. = 1 метр)
+	Фотографии пшеницы с квадрокоптера. (размер 1024 на 1024 пикселя)
+	Углы обзора камеры должны составлять 70 и 120 градусов
+	В конце названия фотографии нужно указать высоту, с которой был сделан снимок. (указать через знак '_' в САНТИМЕТРАХ)
+	Координаты фотографий на поле
+
+Для того что бы произвести расчеты, в интерфейсе программы нужно указать:
+	Папку, из которой будут браться фотографии пшеницы. (у фотографий есть свой формат см. выше) (по стандарту, папка 'images')
+	Папку, куда сохранятся обработанные изображения с обведенными колосками. (по стандарту, папка 'detected_images')
+	Координаты фотографий и контура поля
+	Формат исходных изображений. (png или jpg)
+	Нажать на кнопку 'START'
+
+	Через некоторое время в окне 'RESULTS' появятся все рассчитанные данные
+	Откроется окно визуализации поля и снимков. (чем больше точка снимка, тем больше на нем колосков)
+	Для теста обнаружения колосков можно посмотреть обработанные снимки в папке, указанной ранее
+
+Приятного использования !
+
+
+
