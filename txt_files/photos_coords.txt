@@ -1,3 +1,4 @@
+Example:
 480 744
 170 278
 634 738
@@ -8,3 +9,5 @@
 320 748
 788 312
 684 536
+
+(Example should be deleted. Make sure that there are no empty lines in the file. Also save this file)

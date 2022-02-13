@@ -1,6 +1,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 import webbrowser
+import PIL
+PIL.PILLOW_VERSION = '7.0.0'
+
+if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+
+if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 
 class Ui_MainWindow(object):
@@ -8,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(718, 440)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("ui_images/Icon.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("ui_images/Icon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -32,7 +40,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.StartButton.setFont(font)
-        self.StartButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.StartButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.StartButton.setStyleSheet("QPushButton {\n"
                                        "    color: #333;\n"
                                        "   font: 30pt \"Agency FB\";\n"
@@ -65,7 +73,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.ChooseButton.setFont(font)
-        self.ChooseButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.ChooseButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.ChooseButton.setStyleSheet("QPushButton {\n"
                                         "    color: #333;\n"
                                         "   \n"
@@ -92,7 +100,7 @@ class Ui_MainWindow(object):
         self.ChooseButton.setObjectName("ChooseButton")
         self.SaveButton = QtWidgets.QPushButton(self.centralwidget)
         self.SaveButton.setGeometry(QtCore.QRect(410, 100, 261, 61))
-        self.SaveButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.SaveButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.SaveButton.setStyleSheet("QPushButton {\n"
                                       "    color: #333;\n"
                                       "      font: 16pt \"Agency FB\";\n"
@@ -118,7 +126,7 @@ class Ui_MainWindow(object):
         self.SaveButton.setObjectName("SaveButton")
         self.ChooseFormat = QtWidgets.QComboBox(self.centralwidget)
         self.ChooseFormat.setGeometry(QtCore.QRect(590, 250, 81, 31))
-        self.ChooseFormat.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.ChooseFormat.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.ChooseFormat.setStyleSheet("color: #333;\n"
                                         "   font: 16pt \"Agency FB\";\n"
                                         "background-color: rgb(255, 252, 205);\n"
@@ -132,7 +140,7 @@ class Ui_MainWindow(object):
         self.ChooseFormat.addItem("")
         self.PhotosCoords = QtWidgets.QPushButton(self.centralwidget)
         self.PhotosCoords.setGeometry(QtCore.QRect(540, 180, 131, 51))
-        self.PhotosCoords.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.PhotosCoords.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.PhotosCoords.setStyleSheet("QPushButton {\n"
                                         "    color: #333;\n"
                                         "   font: 16pt \"Agency FB\";\n"
@@ -158,7 +166,7 @@ class Ui_MainWindow(object):
         self.PhotosCoords.setObjectName("PhotosCoords")
         self.FieldCoords = QtWidgets.QPushButton(self.centralwidget)
         self.FieldCoords.setGeometry(QtCore.QRect(410, 180, 111, 51))
-        self.FieldCoords.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.FieldCoords.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.FieldCoords.setStyleSheet("QPushButton {\n"
                                        "    color: #333;\n"
                                        "   font: 16pt \"Agency FB\";\n"
@@ -183,6 +191,7 @@ class Ui_MainWindow(object):
                                        "    }")
         self.FieldCoords.setObjectName("FieldCoords")
         self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setGeometry(QtCore.QRect(410, 325, 261, 111))
         self.label.setStyleSheet(" color: #333;\n"
                                  "   font: 30pt \"Agency FB\";\n"
@@ -204,11 +213,11 @@ class Ui_MainWindow(object):
         self.StartButton.setText(_translate("MainWindow", "START"))
         self.ChooseButton.setText(_translate("MainWindow", "CHOOSE FOLDER WITH PHOTOS"))
         self.SaveButton.setText(_translate("MainWindow", "CHOOSE FOLDER TO SAVE PHOTOS"))
-        self.ChooseFormat.setItemText(0, _translate("MainWindow", "    PNG"))
-        self.ChooseFormat.setItemText(1, _translate("MainWindow", "    JPG"))
+        self.ChooseFormat.setItemText(0, _translate("MainWindow", "  PNG"))
+        self.ChooseFormat.setItemText(1, _translate("MainWindow", "  JPG"))
         self.PhotosCoords.setText(_translate("MainWindow", "PHOTOS COORDS"))
         self.FieldCoords.setText(_translate("MainWindow", "FIELD COORDS"))
-        self.label.setText(_translate("MainWindow", "        RESULTS"))
+        self.label.setText(_translate("MainWindow", "RESULTS"))
 
 
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -298,7 +307,10 @@ if __name__ == "__main__":
     from scripts_and_functions.model import *
     from scripts_and_functions.field import *
 
+    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = '2'
     app = QtWidgets.QApplication(sys.argv)
+    app.setAttribute(QtCore.Qt.AA_DisableHighDpiScaling)
+    app.setAttribute(QtCore.Qt.AA_Use96Dpi)
     nextGui = mainProgram()
     nextGui.show()
     sys.exit(app.exec_())
