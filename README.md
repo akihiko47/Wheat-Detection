@@ -1,7 +1,7 @@
 # 🌾 Wheat Detector 🌾
 Wheat Detector - is a program for determining the amount of wheat in the field, the density of wheat and the area of the field.
 
-❗Here you can download the 'exe' version:  https://www.dropbox.com/s/tkfwfji3oyqrsac/WheatDetector_exe.zip?dl=0❗
+❗Here you can download the 'exe' version: https://www.dropbox.com/s/wc8c78ecydnoent/WheatDetector_exe.zip?dl=0❗
 
 ## You need:
 - PyTorch and Torchvision
