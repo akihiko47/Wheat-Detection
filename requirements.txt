@@ -1,0 +1,8 @@
+torch
+torchvision
+PyQt5
+pillow
+pandas
+matplotlib
+albumentations
+opencv-python

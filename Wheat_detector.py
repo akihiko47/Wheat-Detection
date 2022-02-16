@@ -2,7 +2,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 import webbrowser
 import PIL
+import warnings
 PIL.PILLOW_VERSION = '7.0.0'
+
+warnings.filterwarnings("ignore")
 
 if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
@@ -257,7 +260,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
                                  "    border-radius: 0px;\n"
                                  "    border-style: outset;\n"
                                  "")
-        self.label.setText('           Predicting...\n(this may take some time)')
+        self.label.setText('Predicting...\n(this may take some time)')
         QtGui.QGuiApplication.processEvents()
 
         img_format = str(self.ChooseFormat.currentText()).strip().lower()
@@ -286,9 +289,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
             create_points_plot(corners, photos, field_lst)
         except:
-            self.label.setText('                   ERROR\n'
-                               '   please check the input data\n'
-                               '              or instruction')
+            self.label.setText('ERROR\n'
+                               'please check the input data\n'
+                               'or instruction')
             self.label.setStyleSheet(" color: #333;\n"
                                      "   font: 19pt \"Agency FB\";\n"
                                      "background-color: rgb(255, 252, 205);\n"
